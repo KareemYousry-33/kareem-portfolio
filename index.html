@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kareem Yousry – .NET Backend Developer, Clean Architecture Engineer & Business Development Specialist. Interactive live simulations for PharmacySystem API (.NET 10), SignalR ChatApp, Etman-App, and more." />
+  <meta name="keywords" content="Kareem Yousry, Backend Developer, .NET 10, Clean Architecture, PharmacySystem, SignalR, Flutter, Business Development, GDG, TEDx" />
+  <title>Kareem Yousry | .NET Backend Architect & Interactive Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="scroll-progress" id="scroll-progress"></div>
+<div class="cyber-grid-bg"></div>
+<div class="cursor-spotlight" id="cursor-spotlight"></div>
+<canvas id="particles-canvas"></canvas>
+
+<!-- ══ NAVBAR ══ -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    <span class="nav-logo-icon">
+      <svg class="anim-svg" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <polygon class="svg-spin-slow" points="12,2 21,7 21,17 12,22 3,17 3,7" stroke="#00f5ff" stroke-width="1.8"/>
+        <circle class="svg-pulse" cx="12" cy="12" r="3.2" fill="#bf5af2"/>
+      </svg>
+    </span>
+    KY<span>.</span>dev
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#simulator">Live Sandbox</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        <span>.NET 10 Clean Architecture · Live Simulations Ready</span>
+      </div>
+      <h1 class="hero-name">
+        <span class="first">Kareem</span><br />
+        <span class="last">Yousry</span>
+      </h1>
+      <div class="hero-roles">
+        <span class="role-chip tech">
+          <svg class="anim-svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <circle class="svg-spin-slow" cx="12" cy="12" r="7" stroke="#00f5ff" stroke-width="2" stroke-dasharray="4 3"/>
+            <circle cx="12" cy="12" r="2.5" fill="#00f5ff"/>
+          </svg>
+          Backend Developer
+        </span>
+        <span class="role-chip dotnet">
+          <svg class="anim-svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path class="svg-pulse" d="M12 3L20 7.5V16.5L12 21L4 16.5V7.5L12 3Z" stroke="#bf5af2" stroke-width="2"/>
+          </svg>
+          .NET 10 &amp; Clean Arch
+        </span>
+        <span class="role-chip biz">
+          <svg class="anim-svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path class="svg-float" d="M12 2L14.8 8.3L21.5 9.1L16.5 13.7L17.9 20.4L12 17L6.1 20.4L7.5 13.7L2.5 9.1L9.2 8.3L12 2Z" stroke="#ffd60a" stroke-width="1.8"/>
+          </svg>
+          BD &amp; Public Relations
+        </span>
+      </div>
+
+      <p class="hero-title">
+        &lt; <span id="typed-text"></span><span class="cursor"></span> /&gt;
+      </p>
+
+      <p class="hero-desc">
+        Backend Engineer building production-grade <strong>.NET 10</strong>, <strong>Clean Architecture</strong>,
+        <strong>SignalR</strong>, and <strong>Flutter</strong> systems — paired with Business Development &amp; PR
+        leadership at <strong>GDG</strong>, <strong>TEDx</strong> &amp; <strong>Cyber Wolf</strong>. Test every GitHub
+        project live right inside this portfolio.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#simulator" onclick="selectSim('pharmacy')" class="btn-primary">
+          <svg class="anim-svg" width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <polygon points="6,4 20,12 6,20" fill="#04040e"/>
+          </svg>
+          Try PharmacySystem Live
+        </a>
+        <a href="#projects" class="btn-sim">
+          <svg class="anim-svg" width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="3" width="8" height="8" rx="2" stroke="#30d158" stroke-width="2"/>
+            <rect class="svg-pulse" x="13" y="13" width="8" height="8" rx="2" stroke="#30d158" stroke-width="2"/>
+            <path d="M11 7H17V13" stroke="#30d158" stroke-width="2"/>
+          </svg>
+          All 7 GitHub Sims
+        </a>
+        <a href="#contact" class="btn-ghost">Get In Touch</a>
+      </div>
+
+      <div class="hero-social">
+        <a href="https://github.com/KareemYousry-33" target="_blank" rel="noopener" class="social-link" title="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/kareem-yousry/" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
+        <div class="hero-repo-pill">
+          <svg class="anim-svg" width="15" height="15" viewBox="0 0 24 24" fill="none">
+            <circle class="svg-pulse" cx="12" cy="12" r="5" fill="#30d158"/>
+          </svg>
+          github.com/KareemYousry-33 · 7 Interactive Repos
+        </div>
+      </div>
+    </div>
+
+    <!-- Photo Frame -->
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-ring">
+        <div class="orbit-ring"></div>
+        <div class="photo-border-spin"></div>
+        <div class="photo-inner">
+          <img src="kareem.png" alt="Kareem Yousry" />
+        </div>
+        <div class="photo-glow"></div>
+      </div>
+      <div class="float-badge b1">
+        <svg class="anim-svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path class="svg-pulse" d="M8 21H16M12 17V21M7 4H17V10C17 12.76 14.76 15 12 15C9.24 15 7 12.76 7 10V4Z" stroke="#ffd60a" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        3rd Place Winner
+      </div>
+      <div class="float-badge b2">
+        <svg class="anim-svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <circle class="svg-spin-slow" cx="12" cy="12" r="8" stroke="#00f5ff" stroke-width="2" stroke-dasharray="5 3"/>
+          <circle cx="12" cy="12" r="2.5" fill="#00f5ff"/>
+        </svg>
+        .NET 10 Clean Arch
+      </div>
+      <div class="float-badge b3">
+        <svg class="anim-svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <circle class="svg-wave-1" cx="12" cy="12" r="8" stroke="#30d158" stroke-width="1.6"/>
+          <circle cx="12" cy="12" r="3" fill="#30d158"/>
+        </svg>
+        BD &amp; PR Lead
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STATS ══ -->
+<section id="stats">
+  <div class="stats-grid">
+    <div class="stat-card glow-card reveal">
+      <div class="stat-icon">
+        <svg class="anim-svg" width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path class="svg-dash" d="M4 7L12 3L20 7V17L12 21L4 17V7Z" stroke="#00f5ff" stroke-width="2"/>
+          <path d="M12 12L20 7M12 12V21M12 12L4 7" stroke="#bf5af2" stroke-width="1.6"/>
+        </svg>
+      </div>
+      <div class="stat-num" data-count="7">7</div>
+      <div class="stat-label">GitHub Projects Simulated</div>
+    </div>
+    <div class="stat-card glow-card reveal">
+      <div class="stat-icon">
+        <svg class="anim-svg" width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <polygon class="svg-pulse" points="12,2 15,8.5 22,9.3 17,14 18.2,21 12,17.7 5.8,21 7,14 2,9.3 9,8.5" stroke="#ffd60a" stroke-width="2"/>
+        </svg>
+      </div>
+      <div class="stat-num">3rd</div>
+      <div class="stat-label">National Competition Award</div>
+    </div>
+    <div class="stat-card glow-card reveal">
+      <div class="stat-icon">
+        <svg class="anim-svg" width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <rect x="3" y="4" width="18" height="4" rx="1.5" stroke="#00f5ff" stroke-width="1.8"/>
+          <rect class="svg-float" x="3" y="10" width="18" height="4" rx="1.5" stroke="#bf5af2" stroke-width="1.8"/>
+          <rect x="3" y="16" width="18" height="4" rx="1.5" stroke="#30d158" stroke-width="1.8"/>
+        </svg>
+      </div>
+      <div class="stat-num">4</div>
+      <div class="stat-label">Clean Architecture Layers</div>
+    </div>
+    <div class="stat-card glow-card reveal">
+      <div class="stat-icon">
+        <svg class="anim-svg" width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <circle class="svg-wave-1" cx="12" cy="12" r="9" stroke="#30d158" stroke-width="1.5"/>
+          <circle cx="8" cy="10" r="2" fill="#00f5ff"/>
+          <circle cx="16" cy="10" r="2" fill="#bf5af2"/>
+          <circle cx="12" cy="16" r="2" fill="#ffd60a"/>
+        </svg>
+      </div>
+      <div class="stat-num">3</div>
+      <div class="stat-label">Leadership Communities</div>
+    </div>
+    <div class="stat-card glow-card reveal">
+      <div class="stat-icon">
+        <svg class="anim-svg" width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path class="svg-ecg" d="M2 12H6L9 5L14 19L17 12H22" stroke="#00f5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="stat-num">.NET 10</div>
+      <div class="stat-label">Latest Backend Stack</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SKILLS ══ -->
+<section id="skills">
+  <div class="section-header reveal">
+    <span class="section-label">// kinetic tech stack</span>
+    <h2 class="section-title">Engineering &amp; Business Arsenal</h2>
+    <p class="section-subtitle">Animated engineering capabilities spanning .NET 10 Clean Architecture, Real-time APIs, Flutter Mobile, PostgreSQL/Docker, and Strategic Partnerships.</p>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="skills-grid">
+    <!-- Backend -->
+    <div class="skill-category glow-card reveal">
+      <div class="skill-cat-title">
+        <div class="skill-cat-icon">
+          <svg class="anim-svg" width="26" height="26" viewBox="0 0 24 24" fill="none">
+            <circle class="svg-spin-slow" cx="12" cy="12" r="8" stroke="#00f5ff" stroke-width="2" stroke-dasharray="4 3"/>
+            <circle cx="12" cy="12" r="3" fill="#00f5ff"/>
+          </svg>
+        </div>
+        Backend &amp; .NET 10 APIs
+      </div>
+      <div class="skill-pills">
+        <span class="skill-pill pill-cyan">C# / .NET 10</span>
+        <span class="skill-pill pill-cyan">ASP.NET Core Web API</span>
+        <span class="skill-pill pill-cyan">Entity Framework Core</span>
+        <span class="skill-pill pill-cyan">SignalR Real-Time</span>
+        <span class="skill-pill pill-cyan">Middleware &amp; OpenAPI</span>
+        <span class="skill-pill pill-cyan">Swagger UI</span>
+        <span class="skill-pill pill-cyan">LINQ &amp; Async/Await</span>
+      </div>
+    </div>
+
+    <!-- Clean Architecture -->
+    <div class="skill-category glow-card reveal">
+      <div class="skill-cat-title">
+        <div class="skill-cat-icon pink-icon">
+          <svg class="anim-svg" width="26" height="26" viewBox="0 0 24 24" fill="none">
+            <polygon class="svg-pulse" points="12,2 21,6.5 12,11 3,6.5" stroke="#ff375f" stroke-width="1.8"/>
+            <polyline points="3,12 12,16.5 21,12" stroke="#bf5af2" stroke-width="1.8"/>
+            <polyline points="3,17.5 12,22 21,17.5" stroke="#00f5ff" stroke-width="1.8"/>
+          </svg>
+        </div>
+        Architecture &amp; Transactions
+      </div>
+      <div class="skill-pills">
+        <span class="skill-pill pill-pink">Clean Architecture (4-Layer)</span>
+        <span class="skill-pill pill-pink">Atomic DB Transactions</span>
+        <span class="skill-pill pill-pink">CQRS</span>
+        <span class="skill-pill pill-pink">Repository Pattern</span>
+        <span class="skill-pill pill-pink">SOLID &amp; DI / IoC</span>
+        <span class="skill-pill pill-pink">Global Exception Handling</span>
+      </div>
+    </div>
+
+    <!-- Databases -->
+    <div class="skill-category glow-card reveal">
+      <div class="skill-cat-title">
+        <div class="skill-cat-icon green-icon">
+          <svg class="anim-svg" width="26" height="26" viewBox="0 0 24 24" fill="none">
+            <ellipse cx="12" cy="5.5" rx="7.5" ry="3" stroke="#30d158" stroke-width="1.8"/>
+            <path class="svg-pulse" d="M4.5 5.5V12C4.5 13.66 7.86 15 12 15C16.14 15 19.5 13.66 19.5 12V5.5" stroke="#30d158" stroke-width="1.8"/>
+            <path d="M4.5 12V18.5C4.5 20.16 7.86 21.5 12 21.5C16.14 21.5 19.5 20.16 19.5 18.5V12" stroke="#00f5ff" stroke-width="1.8"/>
+          </svg>
+        </div>
+        Databases &amp; Caching
+      </div>
+      <div class="skill-pills">
+        <span class="skill-pill pill-green">PostgreSQL + Npgsql</span>
+        <span class="skill-pill pill-green">SQL Server</span>
+        <span class="skill-pill pill-green">Supabase</span>
+        <span class="skill-pill pill-green">Redis</span>
+        <span class="skill-pill pill-green">MongoDB</span>
+        <span class="skill-pill pill-green">EF Migrations</span>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="skill-category glow-card reveal">
+      <div class="skill-cat-title">
+        <div class="skill-cat-icon purple-icon">
+          <svg class="anim-svg" width="26" height="26" viewBox="0 0 24 24" fill="none">
+            <rect x="6" y="2.5" width="12" height="19" rx="2.5" stroke="#bf5af2" stroke-width="1.8"/>
+            <circle class="svg-pulse" cx="12" cy="18" r="1.2" fill="#00f5ff"/>
+            <line x1="9.5" y1="6" x2="14.5" y2="6" stroke="#bf5af2" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        Mobile &amp; AI Integrations
+      </div>
+      <div class="skill-pills">
+        <span class="skill-pill pill-purple">Flutter &amp; Dart</span>
+        <span class="skill-pill pill-purple">Firebase</span>
+        <span class="skill-pill pill-purple">Gemini / DeepSeek AI</span>
+        <span class="skill-pill pill-purple">Google Maps SDK</span>
+        <span class="skill-pill pill-purple">PWA &amp; Service Workers</span>
+      </div>
+    </div>
+
+    <!-- DevOps -->
+    <div class="skill-category glow-card reveal">
+      <div class="skill-cat-title">
+        <div class="skill-cat-icon">
+          <svg class="anim-svg" width="26" height="26" viewBox="0 0 24 24" fill="none">
+            <path class="svg-float" d="M6.5 19H18C20.2 19 22 17.2 22 15C22 13 20.5 11.3 18.6 11C18 7.6 15 5 11.5 5C7.9 5 5 7.9 5 11.5C3.3 12 2 13.6 2 15.5C2 17.4 3.6 19 5.5 19H6.5Z" stroke="#00f5ff" stroke-width="1.8"/>
+          </svg>
+        </div>
+        Docker &amp; Cloud DevOps
+      </div>
+      <div class="skill-pills">
+        <span class="skill-pill pill-cyan">Docker &amp; Compose</span>
+        <span class="skill-pill pill-cyan">GitHub Actions CI/CD</span>
+        <span class="skill-pill pill-cyan">Google Cloud</span>
+        <span class="skill-pill pill-cyan">JWT Authentication</span>
+        <span class="skill-pill pill-cyan">Git / GitHub</span>
+      </div>
+    </div>
+
+    <!-- BD & PR -->
+    <div class="skill-category biz-card glow-card reveal">
+      <div class="skill-cat-title">
+        <div class="skill-cat-icon gold-icon">
+          <svg class="anim-svg" width="26" height="26" viewBox="0 0 24 24" fill="none">
+            <circle class="svg-wave-1" cx="12" cy="12" r="9" stroke="#ffd60a" stroke-width="1.4"/>
+            <circle cx="7" cy="12" r="2.2" fill="#ffd60a"/>
+            <circle cx="17" cy="8" r="2.2" fill="#ffd60a"/>
+            <circle cx="17" cy="16" r="2.2" fill="#ffd60a"/>
+            <path d="M9 11L15 8.5M9 13L15 15.5" stroke="#ffd60a" stroke-width="1.6"/>
+          </svg>
+        </div>
+        Business Development &amp; PR
+      </div>
+      <div class="skill-pills">
+        <span class="skill-pill pill-gold">Partnership Deals</span>
+        <span class="skill-pill pill-gold">Sponsorship Acquisition</span>
+        <span class="skill-pill pill-gold">Public Relations</span>
+        <span class="skill-pill pill-gold">Community Growth</span>
+        <span class="skill-pill pill-gold">Negotiation</span>
+        <span class="skill-pill pill-gold">Strategic Outreach</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FEATURED GITHUB PROJECTS ══ -->
+<section id="projects">
+  <div class="section-header reveal">
+    <span class="section-label">// github portfolio</span>
+    <h2 class="section-title">All GitHub Projects — Live &amp; Interactive</h2>
+    <p class="section-subtitle">Click <strong>Launch Live Sim</strong> on any card to interact directly with an authentic live simulation of that system below.</p>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="project-filters reveal">
+    <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects (7)</button>
+    <button class="filter-btn" onclick="filterProjects('dotnet', this)">.NET / Backend</button>
+    <button class="filter-btn" onclick="filterProjects('mobile', this)">Flutter / Mobile</button>
+    <button class="filter-btn" onclick="filterProjects('web', this)">Full-Stack &amp; Web</button>
+  </div>
+
+  <div class="projects-grid">
+
+    <!-- 1. PharmacySystem API -->
+    <article class="project-card featured-new glow-card reveal" data-cat="dotnet">
+      <div class="project-top-row">
+        <span class="project-badge badge-cyan">⚡ NEW · .NET 10 Flagship</span>
+        <span class="project-badge badge-green">4-Layer Clean Arch</span>
+      </div>
+      <div class="project-icon-box">
+        <svg class="anim-svg" width="30" height="30" viewBox="0 0 24 24" fill="none">
+          <rect x="3" y="3" width="18" height="18" rx="5" stroke="#00f5ff" stroke-width="1.8"/>
+          <path class="svg-pulse" d="M12 7V17M7 12H17" stroke="#30d158" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h3 class="project-title">PharmacySystem API</h3>
+      <p class="project-desc">
+        Scalable pharmacy management backend built with .NET 10 &amp; Clean Architecture across Domain, Application, Infrastructure, and API layers with PostgreSQL in Docker.
+      </p>
+      <div class="project-highlights">
+        <div class="highlight-item">Medicine Inventory CRUD + fast search by name or code</div>
+        <div class="highlight-item">Atomic DB Transactions for invoices &amp; auto stock deduction</div>
+        <div class="highlight-item">Customer debt ledger, partial/full payments &amp; history</div>
+        <div class="highlight-item">Global Exception Middleware (standardized 400 / 404 / 500 JSON)</div>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">.NET 10</span>
+        <span class="stack-tag">Clean Architecture</span>
+        <span class="stack-tag">EF Core + Npgsql</span>
+        <span class="stack-tag">PostgreSQL</span>
+        <span class="stack-tag">Docker</span>
+        <span class="stack-tag">Swagger</span>
+      </div>
+      <div class="project-actions">
+        <button class="btn-launch-sim" onclick="selectSim('pharmacy')">▶ Launch Live Sim</button>
+        <a href="https://github.com/KareemYousry-33/PharmacySystem" target="_blank" rel="noopener" class="btn-github-link">GitHub ↗</a>
+      </div>
+    </article>
+
+    <!-- 2. Etman-App -->
+    <article class="project-card glow-card reveal" data-cat="mobile">
+      <div class="project-top-row">
+        <span class="project-badge badge-purple">🏥 Healthcare Ecosystem</span>
+        <span class="project-badge badge-cyan">Flutter + AI</span>
+      </div>
+      <div class="project-icon-box">
+        <svg class="anim-svg" width="30" height="30" viewBox="0 0 24 24" fill="none">
+          <path class="svg-ecg" d="M2 13H6.5L9.5 6L13.5 18L16.5 11L18.5 13H22" stroke="#bf5af2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3 class="project-title">Etman-App (Tabebak)</h3>
+      <p class="project-desc">
+        Full healthcare mobile ecosystem connecting patients, doctors, hospitals, labs, and pharmacies with multi-role dashboards, P2P chat, and AI health assistance.
+      </p>
+      <div class="project-highlights">
+        <div class="highlight-item">6 role dashboards (Patient, Doctor, Pharmacy, Lab, Nurse, Admin)</div>
+        <div class="highlight-item">12 medical specialties &amp; appointment booking flow</div>
+        <div class="highlight-item">AI Health Assistant (Gemini &amp; DeepSeek services)</div>
+        <div class="highlight-item">Prescription workflow &amp; pharmacy locator</div>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">Flutter</span>
+        <span class="stack-tag">Dart</span>
+        <span class="stack-tag">Firebase</span>
+        <span class="stack-tag">Gemini AI</span>
+        <span class="stack-tag">P2P Chat</span>
+      </div>
+      <div class="project-actions">
+        <button class="btn-launch-sim" onclick="selectSim('etman')">▶ Launch Live Sim</button>
+        <a href="https://github.com/KareemYousry-33/Etman-App" target="_blank" rel="noopener" class="btn-github-link">GitHub ↗</a>
+      </div>
+    </article>
+
+    <!-- 3. Enterprise E-Commerce -->
+    <article class="project-card glow-card reveal" data-cat="dotnet">
+      <div class="project-top-row">
+        <span class="project-badge badge-gold">🏆 3rd Place Winner</span>
+        <span class="project-badge badge-purple">Clean Architecture</span>
+      </div>
+      <div class="project-icon-box">
+        <svg class="anim-svg" width="30" height="30" viewBox="0 0 24 24" fill="none">
+          <path class="svg-float" d="M3 5H5.5L7.8 14.5H18.5L20.5 8H6.5" stroke="#ffd60a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="9" cy="18.5" r="1.6" fill="#00f5ff"/>
+          <circle cx="17.5" cy="18.5" r="1.6" fill="#00f5ff"/>
+        </svg>
+      </div>
+      <h3 class="project-title">Enterprise E-Commerce</h3>
+      <p class="project-desc">
+        National competition award-winning e-commerce architecture engineered from scratch with clean separation, JWT auth, inventory control, and admin analytics.
+      </p>
+      <div class="project-highlights">
+        <div class="highlight-item">Product catalog, smart search &amp; stock tracking</div>
+        <div class="highlight-item">JWT role-based authentication &amp; authorization</div>
+        <div class="highlight-item">Order lifecycle pipeline &amp; payment processing</div>
+        <div class="highlight-item">Live revenue &amp; order analytics dashboard</div>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">ASP.NET Core</span>
+        <span class="stack-tag">Clean Architecture</span>
+        <span class="stack-tag">EF Core</span>
+        <span class="stack-tag">SQL Server</span>
+        <span class="stack-tag">JWT Auth</span>
+      </div>
+      <div class="project-actions">
+        <button class="btn-launch-sim" onclick="selectSim('ecommerce')">▶ Launch Live Sim</button>
+        <a href="https://github.com/KareemYousry-33/nterpriseCommerce-CleanArchitecture." target="_blank" rel="noopener" class="btn-github-link">GitHub ↗</a>
+      </div>
+    </article>
+
+    <!-- 4. SignalR ChatApp -->
+    <article class="project-card glow-card reveal" data-cat="dotnet web">
+      <div class="project-top-row">
+        <span class="project-badge badge-cyan">⚡ Real-Time WebSockets</span>
+        <span class="project-badge badge-green">.NET + SignalR</span>
+      </div>
+      <div class="project-icon-box">
+        <svg class="anim-svg" width="30" height="30" viewBox="0 0 24 24" fill="none">
+          <circle class="svg-wave-1" cx="12" cy="12" r="9" stroke="#00f5ff" stroke-width="1.5"/>
+          <circle class="svg-wave-2" cx="12" cy="12" r="6" stroke="#bf5af2" stroke-width="1.5"/>
+          <path d="M8 10H16V15H11L8 17.5V10Z" fill="#00f5ff"/>
+        </svg>
+      </div>
+      <h3 class="project-title">SignalR-ChatApp</h3>
+      <p class="project-desc">
+        Real-time persistent messaging backend powered by ASP.NET Core SignalR Hub and Entity Framework Core, replaying DB history on connect and broadcasting live.
+      </p>
+      <div class="project-highlights">
+        <div class="highlight-item">ChatHub.OnConnectedAsync replays persisted DB history</div>
+        <div class="highlight-item">Clients.All.SendAsync instant multi-client broadcast</div>
+        <div class="highlight-item">EF Core ChatDbContext message persistence</div>
+        <div class="highlight-item">Glassmorphic real-time web client UI</div>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">ASP.NET Core</span>
+        <span class="stack-tag">SignalR Hub</span>
+        <span class="stack-tag">EF Core</span>
+        <span class="stack-tag">WebSockets</span>
+      </div>
+      <div class="project-actions">
+        <button class="btn-launch-sim" onclick="selectSim('signalr')">▶ Launch Live Sim</button>
+        <a href="https://github.com/KareemYousry-33/SignalR-ChatApp" target="_blank" rel="noopener" class="btn-github-link">GitHub ↗</a>
+      </div>
+    </article>
+
+    <!-- 5. Obour CS Hub -->
+    <article class="project-card glow-card reveal" data-cat="web dotnet">
+      <div class="project-top-row">
+        <span class="project-badge badge-blue">🎓 Academic Portal</span>
+        <span class="project-badge badge-green">Supabase + CI</span>
+      </div>
+      <div class="project-icon-box">
+        <svg class="anim-svg" width="30" height="30" viewBox="0 0 24 24" fill="none">
+          <path class="svg-float" d="M12 4L22 9L12 14L2 9L12 4Z" stroke="#60a5fa" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M6 11.5V16.5C6 18.2 8.7 19.5 12 19.5C15.3 19.5 18 18.2 18 16.5V11.5" stroke="#00f5ff" stroke-width="1.8"/>
+        </svg>
+      </div>
+      <h3 class="project-title">Obour CS Hub</h3>
+      <p class="project-desc">
+        University academic resource platform organizing lecture summaries, past exam banks, and course roadmaps for Computer Science students, backed by Supabase.
+      </p>
+      <div class="project-highlights">
+        <div class="highlight-item">Structured courses, summaries &amp; past exam archives</div>
+        <div class="highlight-item">Automated GitHub Actions keepalive cron workflow</div>
+        <div class="highlight-item">Fast semester &amp; subject filtering</div>
+        <div class="highlight-item">Built for hundreds of concurrent students</div>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">ASP.NET Core</span>
+        <span class="stack-tag">Supabase</span>
+        <span class="stack-tag">GitHub Actions</span>
+        <span class="stack-tag">REST API</span>
+      </div>
+      <div class="project-actions">
+        <button class="btn-launch-sim" onclick="selectSim('obour')">▶ Launch Live Sim</button>
+        <a href="https://github.com/KareemYousry-33/obour-cs-hub" target="_blank" rel="noopener" class="btn-github-link">GitHub ↗</a>
+      </div>
+    </article>
+
+    <!-- 6. Taskati-App -->
+    <article class="project-card glow-card reveal" data-cat="mobile">
+      <div class="project-top-row">
+        <span class="project-badge badge-purple">📱 Productivity App</span>
+        <span class="project-badge badge-cyan">Flutter + Timeline</span>
+      </div>
+      <div class="project-icon-box">
+        <svg class="anim-svg" width="30" height="30" viewBox="0 0 24 24" fill="none">
+          <rect x="4" y="4" width="16" height="16" rx="4" stroke="#bf5af2" stroke-width="1.8"/>
+          <path class="svg-dash" d="M8.5 12.2L11 14.7L16 9.5" stroke="#30d158" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3 class="project-title">Taskati-App</h3>
+      <p class="project-desc">
+        Modern Flutter task management mobile app featuring an interactive horizontal date timeline, custom color themes, and persistent local storage.
+      </p>
+      <div class="project-highlights">
+        <div class="highlight-item">Interactive horizontal date_picker_timeline calendar</div>
+        <div class="highlight-item">Color-coded tasks with start/end time &amp; notes</div>
+        <div class="highlight-item">Local persistence with shared_preferences</div>
+        <div class="highlight-item">Clean modular screens, widgets &amp; models</div>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">Flutter</span>
+        <span class="stack-tag">Dart</span>
+        <span class="stack-tag">Timeline UI</span>
+        <span class="stack-tag">Local Storage</span>
+      </div>
+      <div class="project-actions">
+        <button class="btn-launch-sim" onclick="selectSim('taskati')">▶ Launch Live Sim</button>
+        <a href="https://github.com/KareemYousry-33/Taskati-App" target="_blank" rel="noopener" class="btn-github-link">GitHub ↗</a>
+      </div>
+    </article>
+
+    <!-- 7. SahltahaLak -->
+    <article class="project-card glow-card reveal" data-cat="web">
+      <div class="project-top-row">
+        <span class="project-badge badge-pink">⏱️ Focus &amp; Dhikr PWA</span>
+        <span class="project-badge badge-green">Offline ServiceWorker</span>
+      </div>
+      <div class="project-icon-box">
+        <svg class="anim-svg" width="30" height="30" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="13" r="8" stroke="#ff375f" stroke-width="1.8"/>
+          <path class="svg-spin-slow" d="M12 13V8.5" stroke="#00f5ff" stroke-width="2" stroke-linecap="round"/>
+          <path d="M9.5 3H14.5" stroke="#ffd60a" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h3 class="project-title">SahltahaLak (سهلتهالك)</h3>
+      <p class="project-desc">
+        Installable Arabic Study Focus PWA combining a circular SVG Pomodoro/Stopwatch timer with an interactive Dhikr counter and glassmorphic design.
+      </p>
+      <div class="project-highlights">
+        <div class="highlight-item">Circular SVG countdown ring (25 / 45 / 60 / 90m presets)</div>
+        <div class="highlight-item">Timer Focus + Stopwatch mode switcher</div>
+        <div class="highlight-item">Interactive Dhikr tasbih list with reset</div>
+        <div class="highlight-item">PWA manifest + Service Worker offline support</div>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">JavaScript</span>
+        <span class="stack-tag">SVG Ring</span>
+        <span class="stack-tag">PWA</span>
+        <span class="stack-tag">Service Worker</span>
+      </div>
+      <div class="project-actions">
+        <button class="btn-launch-sim" onclick="selectSim('sahltahalak')">▶ Launch Live Sim</button>
+        <a href="https://github.com/KareemYousry-33/sahltahalak" target="_blank" rel="noopener" class="btn-github-link">GitHub ↗</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ══ INTERACTIVE LIVE SIMULATOR STUDIO ══ -->
+<section id="simulator">
+  <div class="section-header reveal">
+    <span class="section-label">// interactive sandbox studio</span>
+    <h2 class="section-title">Test Every Project Live in Browser</h2>
+    <p class="section-subtitle">No setup or Docker required — run atomic .NET 10 invoices, trigger global exception middleware, broadcast SignalR WebSockets, book doctors, manage tasks, or run focus timers right here.</p>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="sim-shell reveal">
+    <div class="sim-topbar">
+      <div class="sim-window-dots">
+        <span class="sim-dot r"></span>
+        <span class="sim-dot y"></span>
+        <span class="sim-dot g"></span>
+      </div>
+      <div class="sim-title-bar">
+        <span>kareem-yousry://live-sandbox</span>
+        <span class="sim-live-pill">● INTERACTIVE RUNTIME</span>
+      </div>
+      <a id="sim-repo-btn" href="https://github.com/KareemYousry-33/PharmacySystem" target="_blank" rel="noopener" class="btn-github-link">View Active Repo ↗</a>
+    </div>
+
+    <div class="sim-switcher" id="sim-switcher">
+      <button class="sim-tab active" data-sim="pharmacy" onclick="selectSim('pharmacy', false)">💊 PharmacySystem (.NET 10)</button>
+      <button class="sim-tab" data-sim="signalr" onclick="selectSim('signalr', false)">💬 SignalR ChatApp</button>
+      <button class="sim-tab" data-sim="etman" onclick="selectSim('etman', false)">🏥 Etman-App (Tabebak)</button>
+      <button class="sim-tab" data-sim="ecommerce" onclick="selectSim('ecommerce', false)">🛒 Enterprise E-Commerce</button>
+      <button class="sim-tab" data-sim="obour" onclick="selectSim('obour', false)">🎓 Obour CS Hub</button>
+      <button class="sim-tab" data-sim="taskati" onclick="selectSim('taskati', false)">📋 Taskati-App</button>
+      <button class="sim-tab" data-sim="sahltahalak" onclick="selectSim('sahltahalak', false)">⏱️ SahltahaLak</button>
+    </div>
+
+    <div class="sim-body">
+      <!-- 1. PharmacySystem Simulator -->
+      <div class="sim-panel active" id="panel-pharmacy">
+        <div class="sim-grid-2">
+          <!-- Workbench -->
+          <div class="sim-box">
+            <div class="sim-box-head">
+              <div class="sim-box-title">🏥 PharmacySystem API Workbench <span class="http-badge http-200">.NET 10 + PostgreSQL</span></div>
+              <button class="sim-btn gold" onclick="pharmacyReset()">↻ Reset Seed DB</button>
+            </div>
+            <div class="sim-subtabs">
+              <button class="sim-subtab active" onclick="pharmacyTab('medicines', this)">💊 Medicines CRUD</button>
+              <button class="sim-subtab" onclick="pharmacyTab('invoices', this)">🧾 Atomic Invoice POS</button>
+              <button class="sim-subtab" onclick="pharmacyTab('customers', this)">💳 Customers &amp; Debt</button>
+            </div>
+
+            <!-- Subtab: Medicines -->
+            <div id="pharma-tab-medicines">
+              <div class="sim-form-row" style="grid-template-columns: 1fr auto;">
+                <input class="sim-input" id="pharma-search" placeholder="Search GET /api/medicines/search?query= (e.g. Panadol or MED-01)" oninput="pharmacySearch()" />
+                <button class="sim-btn" onclick="pharmacySearch()">Search</button>
+              </div>
+              <div class="sim-form-row">
+                <input class="sim-input" id="med-name" placeholder="Medicine Name" />
+                <input class="sim-input" id="med-code" placeholder="Code (e.g. MED-06)" />
+                <input class="sim-input" id="med-price" type="number" min="1" placeholder="Price (EGP)" />
+                <input class="sim-input" id="med-qty" type="number" min="0" placeholder="Stock Qty" />
+                <button class="sim-btn success" onclick="pharmacyAddMedicine()">+ POST Medicine</button>
+              </div>
+              <div class="sim-table-wrap">
+                <table class="sim-table">
+                  <thead>
+                    <tr><th>ID</th><th>Code</th><th>Medicine</th><th>Price</th><th>Stock</th><th>Actions</th></tr>
+                  </thead>
+                  <tbody id="pharma-meds-body"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Subtab: Atomic Invoices -->
+            <div id="pharma-tab-invoices" style="display:none;">
+              <div class="sim-form-row">
+                <select class="sim-select" id="inv-customer"></select>
+                <input class="sim-input" id="inv-number" placeholder="Invoice #" value="INV-2026-104" />
+                <input class="sim-input" id="inv-paid" type="number" min="0" placeholder="Paid Amount (EGP)" value="150" />
+              </div>
+              <div class="sim-form-row">
+                <select class="sim-select" id="inv-med-select"></select>
+                <input class="sim-input" id="inv-med-qty" type="number" min="1" value="2" placeholder="Qty" />
+                <button class="sim-btn" onclick="pharmacyAddToCart()">+ Add Item</button>
+              </div>
+              <div class="sim-table-wrap" style="margin-bottom:0.8rem;">
+                <table class="sim-table">
+                  <thead><tr><th>Medicine</th><th>Unit Price</th><th>Qty</th><th>Line Total</th><th></th></tr></thead>
+                  <tbody id="pharma-cart-body"></tbody>
+                </table>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.7rem;">
+                <div id="pharma-cart-summary" style="font-family:var(--font-mono);font-size:0.8rem;color:var(--neon-cyan);">Total: 0 EGP</div>
+                <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+                  <button class="sim-btn warn" onclick="pharmacySimulateError('stock')">Test 400 Stock Rollback</button>
+                  <button class="sim-btn warn" onclick="pharmacySimulateError('notfound')">Test 404 Middleware</button>
+                  <button class="sim-btn success" onclick="pharmacyCreateInvoice()">⚡ Commit Atomic Invoice</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Subtab: Customers & Debt -->
+            <div id="pharma-tab-customers" style="display:none;">
+              <div class="sim-form-row">
+                <input class="sim-input" id="cust-name" placeholder="Customer Name" />
+                <input class="sim-input" id="cust-phone" placeholder="Phone (010...)" />
+                <input class="sim-input" id="cust-addr" placeholder="Address" />
+                <button class="sim-btn success" onclick="pharmacyAddCustomer()">+ POST Customer</button>
+              </div>
+              <div class="sim-table-wrap" style="margin-bottom:0.8rem;">
+                <table class="sim-table">
+                  <thead><tr><th>ID</th><th>Customer</th><th>Phone</th><th>TotalDebt</th><th>Pay Debt</th></tr></thead>
+                  <tbody id="pharma-custs-body"></tbody>
+                </table>
+              </div>
+              <div id="pharma-payments-log" style="font-family:var(--font-mono);font-size:0.76rem;color:var(--text-muted);"></div>
+            </div>
+          </div>
+
+          <!-- Swagger / Clean Architecture Inspector -->
+          <div class="sim-box">
+            <div class="sim-box-head">
+              <div class="sim-box-title">📡 Swagger &amp; Middleware Inspector</div>
+              <span id="pharma-http-status" class="http-badge http-200">200 OK</span>
+            </div>
+            <div class="arch-pipeline" id="pharma-pipeline">
+              <div class="arch-step lit" data-layer="api">1. API<br/>Controller</div>
+              <div class="arch-step lit" data-layer="app">2. Application<br/>DTO / Interface</div>
+              <div class="arch-step lit" data-layer="infra">3. Infrastructure<br/>EF Core Tx</div>
+              <div class="arch-step lit" data-layer="db">4. Domain/DB<br/>PostgreSQL</div>
+            </div>
+            <div style="font-family:var(--font-mono);font-size:0.74rem;color:var(--neon-cyan);margin-bottom:0.4rem;" id="pharma-req-line">GET /api/medicines</div>
+            <pre class="sim-code-console" id="pharma-console"></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. SignalR ChatApp Simulator -->
+      <div class="sim-panel" id="panel-signalr">
+        <div class="sim-grid-2">
+          <div class="sim-box">
+            <div class="sim-box-head">
+              <div class="sim-box-title">🔌 Dual SignalR Clients (<code>/chatHub</code>)</div>
+              <span class="http-badge http-200">WebSockets Connected</span>
+            </div>
+            <div class="chat-sim-grid">
+              <div class="chat-client-box">
+                <div style="font-family:var(--font-mono);font-size:0.76rem;color:var(--neon-cyan);margin-bottom:0.4rem;">Client A: <strong>Kareem (.NET Dev)</strong></div>
+                <div class="chat-messages" id="signalr-msgs-a"></div>
+                <div class="chat-input-bar">
+                  <input class="sim-input" id="signalr-input-a" placeholder="Message as Kareem..." onkeydown="if(event.key==='Enter') signalrSend('Kareem','a')" />
+                  <button class="sim-btn" onclick="signalrSend('Kareem','a')">Send</button>
+                </div>
+              </div>
+              <div class="chat-client-box">
+                <div style="font-family:var(--font-mono);font-size:0.76rem;color:var(--neon-purple);margin-bottom:0.4rem;">Client B: <strong>Recruiter / Guest</strong></div>
+                <div class="chat-messages" id="signalr-msgs-b"></div>
+                <div class="chat-input-bar">
+                  <input class="sim-input" id="signalr-input-b" placeholder="Message as Guest..." onkeydown="if(event.key==='Enter') signalrSend('Guest','b')" />
+                  <button class="sim-btn" onclick="signalrSend('Guest','b')">Send</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sim-box">
+            <div class="sim-box-head">
+              <div class="sim-box-title">📡 SignalR Hub &amp; EF Core Trace</div>
+              <button class="sim-btn gold" onclick="signalrReplay()">Replay OnConnectedAsync</button>
+            </div>
+            <pre class="sim-code-console" id="signalr-console"></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Etman-App (Tabebak) Simulator -->
+      <div class="sim-panel" id="panel-etman">
+        <div class="phone-sim-layout">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+              <strong style="color:var(--neon-cyan);">🏥 Etman / Tabebak</strong>
+              <select class="sim-select" id="etman-role" style="width:auto;padding:0.25rem 0.5rem;font-size:0.74rem;" onchange="etmanRender()">
+                <option value="patient">Role: Patient</option>
+                <option value="doctor">Role: Doctor</option>
+                <option value="pharmacy">Role: Pharmacy</option>
+              </select>
+            </div>
+            <div id="etman-screen" style="min-height:360px;"></div>
+          </div>
+          <div class="sim-box">
+            <div class="sim-box-head">
+              <div class="sim-box-title">🤖 Tabebak AI Health Assistant &amp; Firebase Sync</div>
+              <span class="http-badge http-200">Gemini / DeepSeek Ready</span>
+            </div>
+            <p style="font-size:0.84rem;color:var(--text-muted);margin-bottom:0.75rem;">Try asking about symptoms (e.g. headache, fever, chest pain, allergy) or book a specialist on the phone screen.</p>
+            <div style="display:flex;gap:0.5rem;margin-bottom:0.85rem;">
+              <input class="sim-input" id="etman-ai-input" placeholder="Describe symptom (e.g. fever and sore throat)..." onkeydown="if(event.key==='Enter') etmanAskAI()" />
+              <button class="sim-btn success" onclick="etmanAskAI()">Ask AI</button>
+            </div>
+            <pre class="sim-code-console" id="etman-console"></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Enterprise E-Commerce Simulator -->
+      <div class="sim-panel" id="panel-ecommerce">
+        <div class="sim-grid-2">
+          <div class="sim-box">
+            <div class="sim-box-head">
+              <div class="sim-box-title">🛒 Storefront &amp; JWT Auth <span class="http-badge http-200" id="ecom-auth-badge">JWT: Authenticated</span></div>
+              <button class="sim-btn gold" onclick="ecomToggleAuth()">Toggle JWT Token</button>
+            </div>
+            <div class="sim-form-row" style="grid-template-columns:1fr auto;">
+              <input class="sim-input" id="ecom-search" placeholder="Filter products..." oninput="ecomRender()" />
+              <span id="ecom-kpi" style="font-family:var(--font-mono);font-size:0.78rem;color:var(--neon-green);align-self:center;">Revenue: 0 EGP</span>
+            </div>
+            <div id="ecom-products" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:0.65rem;margin-bottom:0.9rem;"></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.6rem;">
+              <span id="ecom-cart-info" style="font-family:var(--font-mono);font-size:0.8rem;color:var(--neon-cyan);">Cart: 0 items (0 EGP)</span>
+              <button class="sim-btn success" onclick="ecomCheckout()">Checkout &amp; Place Order</button>
+            </div>
+          </div>
+          <div class="sim-box">
+            <div class="sim-box-head">
+              <div class="sim-box-title">📦 Clean Architecture Order Pipeline</div>
+              <span class="http-badge http-200">SQL Server</span>
+            </div>
+            <pre class="sim-code-console" id="ecom-console"></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Obour CS Hub Simulator -->
+      <div class="sim-panel" id="panel-obour">
+        <div class="sim-grid-2">
+          <div class="sim-box">
+            <div class="sim-box-head">
+              <div class="sim-box-title">🎓 Obour CS Hub — Academic Repository</div>
+              <span class="http-badge http-200">Supabase Connected</span>
+            </div>
+            <div class="sim-form-row">
+              <select class="sim-select" id="obour-level" onchange="obourRender()">
+                <option value="all">All Academic Levels</option>
+                <option value="L2">Level 2 — Core CS</option>
+                <option value="L3">Level 3 — Systems &amp; AI</option>
+                <option value="L4">Level 4 — Graduation &amp; Cloud</option>
+              </select>
+              <input class="sim-input" id="obour-search" placeholder="Search course or exam..." oninput="obourRender()" />
+            </div>
+            <div class="sim-table-wrap">
+              <table class="sim-table">
+                <thead><tr><th>Course</th><th>Level</th><th>Resource Type</th><th>Action</th></tr></thead>
+                <tbody id="obour-body"></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="sim-box">
+            <div class="sim-box-head">
+              <div class="sim-box-title">📄 Resource Preview &amp; Keepalive Telemetry</div>
+              <span class="http-badge http-200">Keepalive Cron OK</span>
+            </div>
+            <pre class="sim-code-console" id="obour-console"></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Taskati-App Simulator -->
+      <div class="sim-panel" id="panel-taskati">
+        <div class="phone-sim-layout">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.7rem;">
+              <div>
+                <div style="font-size:0.72rem;color:var(--text-muted);">Flutter Local Storage</div>
+                <strong style="color:var(--neon-purple);">Hello, Kareem 👋</strong>
+              </div>
+              <span class="http-badge http-200" id="taskati-count">0 Tasks</span>
+            </div>
+            <div id="taskati-days" style="display:flex;gap:0.35rem;overflow-x:auto;margin-bottom:0.75rem;"></div>
+            <div id="taskati-list" style="display:flex;flex-direction:column;gap:0.45rem;max-height:260px;overflow-y:auto;"></div>
+          </div>
+          <div class="sim-box">
+            <div class="sim-box-head">
+              <div class="sim-box-title">➕ Add Task (<code>shared_preferences</code> Sync)</div>
+            </div>
+            <div class="sim-form-row">
+              <input class="sim-input" id="task-title" placeholder="Task title (e.g. Deploy .NET 10 API)" />
+              <input class="sim-input" id="task-note" placeholder="Short note..." />
+            </div>
+            <div class="sim-form-row">
+              <input class="sim-input" id="task-time" value="08:00 PM - 09:30 PM" />
+              <select class="sim-select" id="task-color">
+                <option value="#00f5ff">Cyan Accent</option>
+                <option value="#bf5af2">Purple Accent</option>
+                <option value="#ffd60a">Gold Accent</option>
+                <option value="#30d158">Green Accent</option>
+              </select>
+              <button class="sim-btn success" onclick="taskatiAdd()">+ Create Task</button>
+            </div>
+            <pre class="sim-code-console" id="taskati-console"></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. SahltahaLak Simulator -->
+      <div class="sim-panel" id="panel-sahltahalak">
+        <div class="sim-grid-2">
+          <div class="sim-box" style="text-align:center;">
+            <div class="sim-box-head">
+              <div class="sim-box-title">⏱️ SahltahaLak Study Focus Timer</div>
+              <button class="sim-btn" id="sahl-mode-btn" onclick="sahlToggleMode()">Mode: Timer Focus</button>
+            </div>
+            <div class="timer-ring-wrap">
+              <svg width="210" height="210" viewBox="0 0 210 210">
+                <circle cx="105" cy="105" r="90" stroke="rgba(255,255,255,0.07)" stroke-width="10" fill="none"/>
+                <circle id="sahl-ring" cx="105" cy="105" r="90" stroke="#00f5ff" stroke-width="10" fill="none" stroke-linecap="round" transform="rotate(-90 105 105)" stroke-dasharray="565.48" stroke-dashoffset="0"/>
+              </svg>
+              <div class="timer-ring-text">
+                <div id="sahl-time" style="font-family:var(--font-mono);font-size:2.1rem;font-weight:800;color:var(--neon-cyan);">25:00</div>
+                <div id="sahl-label" style="font-size:0.75rem;color:var(--text-muted);">Timer Focus</div>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:center;gap:0.5rem;margin-bottom:0.75rem;flex-wrap:wrap;">
+              <button class="sim-btn success" onclick="sahlStart()">▶ Start</button>
+              <button class="sim-btn gold" onclick="sahlPause()">❚❚ Pause</button>
+              <button class="sim-btn warn" onclick="sahlReset()">↻ Reset</button>
+            </div>
+            <div style="display:flex;justify-content:center;gap:0.45rem;flex-wrap:wrap;">
+              <button class="sim-subtab active" onclick="sahlSetPreset(25, this)">25m</button>
+              <button class="sim-subtab" onclick="sahlSetPreset(45, this)">45m</button>
+              <button class="sim-subtab" onclick="sahlSetPreset(60, this)">60m</button>
+              <button class="sim-subtab" onclick="sahlSetPreset(90, this)">90m</button>
+            </div>
+          </div>
+
+          <div class="sim-box">
+            <div class="sim-box-head">
+              <div class="sim-box-title" style="font-family:var(--font-ar);">📿 أذكار مختارة (Click to Count)</div>
+              <button class="sim-btn" onclick="sahlResetDhikr()">إعادة التسبيح</button>
+            </div>
+            <div class="dhikr-list" id="sahl-dhikr-list"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ EXPERIENCE ══ -->
+<section id="experience">
+  <div class="section-header reveal">
+    <span class="section-label">// journey</span>
+    <h2 class="section-title">Experience &amp; Leadership</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="experience-tabs reveal">
+    <button class="exp-tab active" onclick="switchTab('tech', this)">⚙️ Technical Engineering</button>
+    <button class="exp-tab biz-tab" onclick="switchTab('biz', this)">🤝 Business Dev &amp; PR</button>
+  </div>
+
+  <div class="timeline-pane active" id="pane-tech">
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-date">2026 · LATEST</div>
+          <div class="timeline-title">Backend Architect — PharmacySystem API (.NET 10)</div>
+          <div class="timeline-company">Clean Architecture · PostgreSQL · Docker</div>
+          <div class="timeline-desc">
+            Designed a decoupled 4-layer pharmacy system (Domain, Application, Infrastructure, API) featuring atomic database transactions for invoice sales, real-time customer debt ledgers, and centralized exception handling middleware.
+          </div>
+          <div class="timeline-tags">
+            <span class="t-tag">.NET 10</span><span class="t-tag">Clean Architecture</span><span class="t-tag">Npgsql</span><span class="t-tag">Docker</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot" style="background:var(--neon-gold);box-shadow:0 0 15px var(--neon-gold);"></div>
+        <div class="timeline-card">
+          <div class="timeline-date" style="color:var(--neon-gold);">COMPETITION AWARD</div>
+          <div class="timeline-title">🏆 3rd Place — Enterprise E-Commerce Showcase</div>
+          <div class="timeline-company" style="color:var(--neon-gold);">National Developer Competition</div>
+          <div class="timeline-desc">
+            Won 3rd place with a full Clean Architecture e-commerce platform built from scratch with JWT security, inventory management, and analytics dashboards.
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot" style="background:var(--neon-purple);box-shadow:0 0 15px var(--neon-purple);"></div>
+        <div class="timeline-card">
+          <div class="timeline-date" style="color:var(--neon-purple);">FLAGSHIP MOBILE + AI</div>
+          <div class="timeline-title">Lead Developer — Etman (Tabebak) &amp; SignalR ChatApp</div>
+          <div class="timeline-company" style="color:var(--neon-purple);">Web &amp; Mobile Real-Time Systems</div>
+          <div class="timeline-desc">
+            Built real-time SignalR WebSocket hubs with EF Core persistence alongside multi-role Flutter healthcare ecosystems integrated with Firebase and Gemini/DeepSeek AI assistants.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline-pane" id="pane-biz">
+    <div class="timeline biz-line">
+      <div class="timeline-item reveal">
+        <div class="timeline-dot" style="background:var(--neon-gold);box-shadow:0 0 15px var(--neon-gold);"></div>
+        <div class="timeline-card">
+          <div class="timeline-date" style="color:var(--neon-gold);">PRESENT · GDG</div>
+          <div class="timeline-title">Business Development &amp; PR</div>
+          <div class="timeline-company" style="color:var(--neon-gold);">GDG On Campus — Zagazig University</div>
+          <div class="timeline-desc">
+            Driving partnerships, corporate sponsorships, and strategic community outreach for Google Developer Group on campus.
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot" style="background:var(--neon-pink);box-shadow:0 0 15px var(--neon-pink);"></div>
+        <div class="timeline-card">
+          <div class="timeline-date" style="color:var(--neon-pink);">TEDx · ALKAWMIA</div>
+          <div class="timeline-title">Business Development &amp; PR</div>
+          <div class="timeline-company" style="color:var(--neon-pink);">TEDx Alkawmia</div>
+          <div class="timeline-desc">
+            Managed corporate outreach, negotiated sponsorship agreements, and led PR communications to amplify event reach.
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-date">OI · CYBER WOLF</div>
+          <div class="timeline-title">Business Development &amp; PR</div>
+          <div class="timeline-company">OI — Cyber Wolf</div>
+          <div class="timeline-desc">
+            Built strategic relationships with tech companies, executed outreach campaigns, and secured collaborative partnerships.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="org-logos reveal">
+      <div class="org-chip">🌐 GDG On Campus — Zagazig University</div>
+      <div class="org-chip">🎤 TEDx Alkawmia</div>
+      <div class="org-chip">🐺 OI — Cyber Wolf</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact">
+  <div class="contact-container">
+    <div class="section-header reveal">
+      <span class="section-label">// connect</span>
+      <h2 class="section-title">Let's Build Something Extraordinary</h2>
+      <div class="section-line"></div>
+    </div>
+    <p class="contact-subtitle reveal">
+      Need a scalable .NET backend architect, a cross-platform mobile product, or a strategic Business Development &amp; PR partner? Reach out anytime.
+    </p>
+    <div class="contact-links reveal">
+      <a href="mailto:kareemyousry78@gmail.com" class="contact-card">✉️ kareemyousry78@gmail.com</a>
+      <a href="https://wa.me/201204940662" target="_blank" rel="noopener" class="contact-card" style="border-color:rgba(37,211,102,0.3);">📱 WhatsApp: 01204940662</a>
+      <a href="https://github.com/KareemYousry-33" target="_blank" rel="noopener" class="contact-card">💻 GitHub: KareemYousry-33</a>
+      <a href="https://www.linkedin.com/in/kareem-yousry/" target="_blank" rel="noopener" class="contact-card">🔗 LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Designed &amp; Engineered by <span>Kareem Yousry</span> · .NET 10 &amp; Interactive Sandbox Portfolio · &copy; 2026</p>
+</footer>
+
+<script src="app.js"></script>
+<script src="simulators.js"></script>
+</body>
+</html>
